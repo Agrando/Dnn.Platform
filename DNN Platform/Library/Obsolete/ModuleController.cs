@@ -194,6 +194,8 @@ namespace DotNetNuke.Entities.Modules
         [Obsolete("Deprecated in DNN 7.3.  Please use the ModuleSettings property of the ModuleInfo object")]
         public Hashtable GetModuleSettings(int ModuleId)
         {
+            return GetModule(ModuleId).ModuleSettings;
+
             var settings = new Hashtable();
             IDataReader dr = null;
             try
